@@ -54,10 +54,11 @@ int farbwechsel (int farbe){
         noStroke(); 
         
         if (links) {
-            ellipse(x,y,x+d,y+d);
-            ellipse(x,y+3*d, x+d, y+s);
+            ellipse(x+a,y+a,x+d+a,y+d+a);
+            ellipse(x+a,y+3*d-a,x+d+a,y+s-a);
         } else { 
-            ellipse (x+3*d,y+3*d,x+s,y+s);
+            ellipse (x+3*d-a,y+a,x+s-a,y+d+a);
+            ellipse (x+3*d-a,y+3*d-a,x+s-a,y+s-a);
         }
     }
 
@@ -83,8 +84,8 @@ int farbwechsel (int farbe){
     }
     public void zeichneLinie()
     {
-        stroke(127,255,0);
-        strokeWeight(a);
+        stroke(8,250,78);
+        strokeWeight(3);
         for (int i=0; i<= 2; i++){
             line(d-a,d+s+s*i,d+a+8*s,d+s+s*i);
         }
