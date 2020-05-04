@@ -1,5 +1,5 @@
 
- //$PKGLINE
+//$PKGLINE
 import processing.core.PApplet;
 
 /**
@@ -20,7 +20,12 @@ public class wellen2b extends PApplet
     {
         size(500,500);
     }        
-
+    int d = 40;
+    int a = 3/4*d;
+    int gruen = 0xff228B22;
+    int farbe1 = gruen;
+    int weiss = 255;
+    int farbe2 = weiss;
     /**
      * Die setup() Methode wird einmal aufgerufen, wenn das Programm startet.
      * Hier werden Einstellungen wie die Hintergrundfarbe vorgenommen
@@ -28,8 +33,26 @@ public class wellen2b extends PApplet
      */
     @Override
     public void setup()
-    {
+    {zeichneQuadrate();
 
+    }
+
+    public void zeichneQuadrate(){
+        for (int i=0; i<12; i++){
+            for (int k=0; k<12; k++){
+                if (farbe1 == weiss){
+                    farbe1 = gruen;
+                    farbe2 = weiss;
+                } else {
+                    farbe1 = weiss;
+                    farbe2 = gruen;
+                }
+                fill (farbe1);
+                rect(i*d,k*d,d,d);
+                fill (farbe2);
+                rect(i*d+1/8*d,k*d+1/8*d,a,a);
+            }
+        }
     }
 
     /**
@@ -46,7 +69,7 @@ public class wellen2b extends PApplet
     /**
      * Mit der main()-Methode wird das Programm gestartet.
      *
-     */	
+     */ 
     public static void main(String _args[]){ 
         PApplet.main(new String[] {wellen2b.class.getName() });
     }
