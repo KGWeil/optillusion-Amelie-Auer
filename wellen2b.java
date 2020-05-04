@@ -18,10 +18,10 @@ public class wellen2b extends PApplet
     @Override
     public void settings()
     {
-        size(500,500);
+        size(1000,1000);
     }        
-    int d = 40;
-    int a = 3/4*d;
+    int d = 100;
+    int a = 75;
     int gruen = 0xff228B22;
     int farbe1 = gruen;
     int weiss = 255;
@@ -50,7 +50,7 @@ public class wellen2b extends PApplet
                 fill (farbe1);
                 rect(i*d,k*d,d,d);
                 fill (farbe2);
-                rect(i*d+1/8*d,k*d+1/8*d,a,a);
+                rect(i*d+12,k*d+12,a,a);
             }
         }
     }
