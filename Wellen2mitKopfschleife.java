@@ -10,7 +10,7 @@ import processing.core.PApplet;
  * @author (Ihr Name) 
  * @version (eine Versionsnummer oder ein Datum)
  */
-public class wellen2b extends PApplet
+public class Wellen2mitKopfschleife extends PApplet
 {       
     /**
      * settings() Methode 
@@ -19,7 +19,7 @@ public class wellen2b extends PApplet
     @Override
     public void settings()
     {
-        size(1000,1000);
+        size(500,500);
     }        
     int d = 50;
     int a = 38;
@@ -28,6 +28,8 @@ public class wellen2b extends PApplet
     int farbe1 = gruen;
     int weiss = 255;
     int farbe2 = weiss;
+    int k = 0;
+    int i =0;
 
     /**
      * Die setup() Methode wird einmal aufgerufen, wenn das Programm startet.
@@ -41,9 +43,8 @@ public class wellen2b extends PApplet
     }
 
     public void zeichneQuadrate(){
-
-        for (int i=0; i<12; i++){
-            for (int k=0; k<13; k++){
+        while (i < width) {
+            while (k < height ){
                 if (farbe1 == weiss){
                     farbe1 = gruen;
                     farbe2 = weiss;
@@ -55,9 +56,10 @@ public class wellen2b extends PApplet
                 rect(i*d,k*d,d,d);
                 fill (farbe2);
                 rect(i*d+b,k*d+b,a,a);
+                k = k+d;
             }
+            i = i+d;
         }
-
     }
 
     /**
@@ -76,7 +78,7 @@ public class wellen2b extends PApplet
      *
      */ 
     public static void main(String _args[]){ 
-        PApplet.main(new String[] {wellen2b.class.getName() });
+        PApplet.main(new String[] {Wellen2mitKopfschleife.class.getName() });
     }
 
 }
