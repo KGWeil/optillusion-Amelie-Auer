@@ -19,7 +19,7 @@ public class Wellen2mitKopfschleife extends PApplet
     @Override
     public void settings()
     {
-        size(400,500);
+        size(849,849);
     }        
     int d = 50; //großes Quadrat Seitenlänge
     int a = 38; //kleines Quadrat Seitenlänge
@@ -53,9 +53,9 @@ public class Wellen2mitKopfschleife extends PApplet
                     farbe2 = gruen;
                 }
                 fill (farbe1); //setzt Farbe 
-                rect(x*d,y*d,d,d); //großes Recheck
+                rect(x,y,d,d); //großes Recheck
                 fill (farbe2); //setzt andere Farbe
-                rect(x*d+b,y*d+b,a,a); // kleines Rechteck
+                rect(x+b,y+b,a,a); // kleines Rechteck
                 x = x+d; //erhöt k um die Seitenlänge
             }
             y = y+d; //erhöt i um die Seitenlänge
