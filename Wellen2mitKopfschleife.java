@@ -19,17 +19,17 @@ public class Wellen2mitKopfschleife extends PApplet
     @Override
     public void settings()
     {
-        size(500,500);
+        size(400,500);
     }        
-    int d = 50;
-    int a = 38;
-    int b = 6;
-    int gruen = 0xff228B22;
-    int farbe1 = gruen;
-    int weiss = 255;
+    int d = 50; //großes Quadrat Seitenlänge
+    int a = 38; //kleines Quadrat Seitenlänge
+    int b = 6; //Abstand zwischen großem und kleinem Qudrat
+    int gruen = 0xff228B22; //Farbe Grünton
+    int farbe1 = gruen; 
+    int weiss = 255; //Farbe weis
     int farbe2 = weiss;
-    int k = 0;
-    int i =0;
+    int y = 0; //y-Koordinate
+    int x =0; //x-Koordinate
 
     /**
      * Die setup() Methode wird einmal aufgerufen, wenn das Programm startet.
@@ -43,22 +43,23 @@ public class Wellen2mitKopfschleife extends PApplet
     }
 
     public void zeichneQuadrate(){
-        while (i < width) {
-            while (k < height ){
-                if (farbe1 == weiss){
+        while (y < height) { //während y kleiner als die Höhe ist führe Schleife durch
+            while (x < width ){ //während x kleiener als die Breite ist führe Schleife durch
+                if (farbe1 == weiss){ //Farbwechsel
                     farbe1 = gruen;
                     farbe2 = weiss;
                 } else {
                     farbe1 = weiss;
                     farbe2 = gruen;
                 }
-                fill (farbe1);
-                rect(i*d,k*d,d,d);
-                fill (farbe2);
-                rect(i*d+b,k*d+b,a,a);
-                k = k+d;
+                fill (farbe1); //setzt Farbe 
+                rect(x*d,y*d,d,d); //großes Recheck
+                fill (farbe2); //setzt andere Farbe
+                rect(x*d+b,y*d+b,a,a); // kleines Rechteck
+                x = x+d; //erhöt k um die Seitenlänge
             }
-            i = i+d;
+            y = y+d; //erhöt i um die Seitenlänge
+            x = 0; //setzt x wieder auf 0 für ne neue Reihe
         }
     }
 
